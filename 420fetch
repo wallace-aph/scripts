@@ -38,9 +38,11 @@ fun9(){
 funMU(){
 	mpc | grep -
 }
+
 #funWM(){
 #	echo -e -n "WM:" && cat .xinitrc | grep exec | sed s/"exec"/""/g   
 #}
+
 c="\e[1;32m"
 b="\e[1;35m"
 echo -e "
