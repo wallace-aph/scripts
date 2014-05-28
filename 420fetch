@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # This isn't created by me, but as there is no definitive copy out there, I decided to put it here.
-# I did add a few features though, and remove the window manager feature, as it didn't actually detect anything
+# I did add a few features though, and make a sketchy window manager detector. It's disabled by default.
+# If you want it anyways, and you don't use a desktop manager, uncomment the funWM on the leaf.
 
 fun1(){
 echo "$(whoami)@$(hostname)"
@@ -35,9 +36,11 @@ fun9(){
 	echo "PKGS: 420"
 }
 funMU(){
-   mpc | grep -
+	mpc | grep -
 }
-
+funWM(){
+	cat .xinitrc | grep exec | sed s/"exec"/""/g
+}
 c="\e[1;32m"
 b="\e[1;35m"
 echo -e "
@@ -55,7 +58,7 @@ ${c}       3MMMMx.     'MMMMMMf      xnMMMMMM\"     ${b}$(fun7)
 ${c}       '*MMMMM      MMMMMM.     nMMMMMMP\"      ${b}$(fun8)
 ${c}         *MMMMMx    \"MMMMM\"    .MMMMMMM=       ${b}$(fun9)
 ${c}          *MMMMMh   \"MMMMM\"   JMMMMMMP         ${b}PLAYING: $(funMU)
-${c}            MMMMMM   3MMMM.  dMMMMMM            .
+${c}            MMMMMM   3MMMM.  dMMMMMM            . # ${b}WM: $(funWM)
 ${c}             MMMMMM  \"MMMM  .MMMMM(        .nnMP\"
 ${c} =..          *MMMMx  MMM\"  dMMMM\"    .nnMMMMM*
 ${c}   \"MMn...     'MMMMr 'MM   MMM\"   .nMMMMMMM*\"
