@@ -35,14 +35,15 @@ fun8(){
 fun9(){
 	echo "PKGS: 420"
 }
+fun10(){
+export | grep "x TERM=" | sed s/"declare -x"/""/g | sed s/'"'/""/g | sed s/'='/": "/g
+}
 funMU(){
 	mpc | grep -
 }
-
-#funWM(){
-#	echo -e -n "WM:" && cat ~/.xinitrc | grep exec | sed s/"exec"/""/g   
-#}
-
+funWM(){
+	echo -e -n "WM:" && cat ~/.xinitrc | grep exec | sed s/"exec"/""/g   
+}
 c="\e[1;32m"
 b="\e[1;35m"
 echo -e "
@@ -59,9 +60,9 @@ ${c}      )MMMh.        MMMMMM         MMMMMMM     ${b}$(fun6)
 ${c}       3MMMMx.     'MMMMMMf      xnMMMMMM\"     ${b}$(fun7)
 ${c}       '*MMMMM      MMMMMM.     nMMMMMMP\"      ${b}$(fun8)
 ${c}         *MMMMMx    \"MMMMM\"    .MMMMMMM=       ${b}$(fun9)
-${c}          *MMMMMh   \"MMMMM\"   JMMMMMMP         ${b}PLAYING: $(funMU)
+${c}          *MMMMMh   \"MMMMM\"   JMMMMMMP        ${b}$(fun10)
 ${c}            MMMMMM   3MMMM.  dMMMMMM           ${b}$(funWM)
-${c}             MMMMMM  \"MMMM  .MMMMM(        .nnMP\"
+${c}             MMMMMM  \"MMMM  .MMMMM(        .nnMP\"  ${b}PLAYING: $(funMU)
 ${c} =..          *MMMMx  MMM\"  dMMMM\"    .nnMMMMM*
 ${c}   \"MMn...     'MMMMr 'MM   MMM\"   .nMMMMMMM*\"
 ${c}    \"4MMMMnn..   *MMM  MM  MMP\"  .dMMMMMMM\"\"
