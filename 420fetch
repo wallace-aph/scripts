@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # This isn't created by me, but as there is no definitive copy out there, I decided to put it here.
-# I did add a few features though, and make a sketchy window manager detector. It's disabled by default.
-# If you want it anyways, and you don't use a desktop manager, uncomment the three lines labeled funWM
+# I did add a few features though
 
 fun1(){
 echo "$(whoami)@$(hostname)"
