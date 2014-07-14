@@ -1,0 +1,23 @@
+tput civis -- invisible
+while true
+do
+	clear
+	artist=$(echo -n " - " && mpc -f %artist%)
+	track=$(echo -n " - " && mpc -f %title%)
+	album=$(echo -n " - " && mpc -f %album%)
+	time=$(echo -n " - " && mpc -f %time%)
+
+	printf "Now Playing"
+	echo -n "$track" | grep -
+	printf "Length"
+	echo -n "$time" | grep -
+	printf "By"
+	echo -n "$artist" | grep -
+	printf "Album"
+	echo -n "$album" | grep -
+
+	sleep 10s
+	# Alternatively, remove the while loop and have ncmpcpp give the signal to update (which is probably a better idea)
+	trap "echo DED; exit;" SIGINT SIGTERM SIGKILL SIGMURDER
+done
+tput civis -- visible
