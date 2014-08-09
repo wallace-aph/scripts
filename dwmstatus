@@ -1,6 +1,6 @@
 while true
 do
-xsetroot -name "$(date +%H:%M);$(mpc | grep -) | It is $(date +%A," "%B" "%d.) | It's probably not raining, but I wish it was."
+xsetroot -name "$(date +%H:%M) | $(mpc | grep -)"
 trap "echo Exited!; exit;" SIGINT SIGTERM
 sleep 60s
 done
