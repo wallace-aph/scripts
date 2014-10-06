@@ -1,3 +1,6 @@
+# This arranges and launches the indvidual scripts. Format is "./launch scriptname(or all)"
+# Sorry if your monitor doesn't fit these, you can edit the -geometry args if you wish
+
 if [ $1 == "volume" ]
 then
 urxvt -geometry 15x2+1257+593 -e ~/scripts/rice/volume
