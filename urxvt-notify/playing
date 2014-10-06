@@ -1,0 +1,9 @@
+#!/bin/bash
+tput civis -- invisible
+while true
+do
+clear
+echo -e "\e[1;35m♫ \e[0m$(mpc | grep -)"
+trap "echo Exited!; exit;" SIGINT SIGTERM
+sleep 10s
+done
