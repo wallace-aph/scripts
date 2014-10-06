@@ -1,0 +1,11 @@
+#!/bin/bash
+tput civis -- invisible
+while true
+do
+clear
+
+sensors | grep temp
+
+trap "echo Exited!; exit;" SIGINT SIGTERM
+sleep 60s
+done
