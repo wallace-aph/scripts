@@ -1,0 +1,27 @@
+if [ $1 == "volume" ]
+then
+urxvt -geometry 15x2+1257+593 -e ~/scripts/rice/volume
+fi	
+
+if [ $1 == "temps" ]
+then
+urxvt -geometry 56x5+1052+523 -e ~/scripts/rice/temps
+fi	
+
+if [ $1 == "playing" ]
+then
+urxvt -geometry 55x2+1057+633 -e ~/scripts/rice/playing
+fi	
+
+if [ $1 == "weather" ]
+then
+urxvt -geometry 60x7+1032+673 -e ~/scripts/rice/weather
+fi	
+
+if [ $1 == "all" ]
+then
+urxvt -geometry 60x7+1032+673 -e ~/scripts/rice/weather &
+urxvt -geometry 55x2+1057+633 -e ~/scripts/rice/playing &
+urxvt -geometry 56x5+1052+523 -e ~/scripts/rice/temps &
+urxvt -geometry 15x2+1257+593 -e ~/scripts/rice/volume
+fi	
