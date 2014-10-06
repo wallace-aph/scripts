@@ -1,0 +1,9 @@
+#!/bin/bash
+tput civis -- invisible
+while true
+do
+clear
+echo -e "\e[1;32m♬ \e[0m$(mpc volume)"
+trap "echo Exited!; exit;" SIGINT SIGTERM
+sleep 60s
+done
