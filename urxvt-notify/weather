@@ -1,0 +1,14 @@
+#!/bin/bash
+yourcity=knyc # Your city code goes here, read http://www.nws.noaa.gov/tg/siteloc.php
+tput civis -- invisible
+while true
+do
+clear
+echo "  ☁☁ ☁  ☁☁  ☁ ☁☁  ☁☁☁ ☁☁ ☁  ☁  ☁☁☁ ☁☁ ☁☁ ☁  ☁☁  ☁ ☁ ☁"
+weather $yourcity | grep Temperature
+weather $yourcity | grep Relative
+weather $yourcity | grep Wind
+weather $yourcity | grep Sky
+trap "echo Exited!; exit;" SIGINT SIGTERM
+sleep 60m
+done
