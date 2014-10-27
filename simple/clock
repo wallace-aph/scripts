@@ -1,0 +1,10 @@
+while true
+do
+DATE=$(date +%H:%M)
+tput civis      -- invisible
+clear
+# fortune
+echo "$DATE" | toilet --gay -f mono9
+sleep 1
+
+done
