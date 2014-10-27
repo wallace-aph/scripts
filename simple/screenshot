@@ -1,0 +1,2 @@
+sleep 1 && scrot '%Y-%m-%d-%H:%M_scrotum.png' -e 'mv $f ~/Pictures/Screenshots'
+# If you want one file overwritten when this script is used, replace '%Y-%m-%d-%H:%M_scrotum.png' with 'yourfilename.png'
