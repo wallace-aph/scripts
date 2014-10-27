@@ -7,6 +7,7 @@ todo
 =======
 
 A todo manager that uses notify-send (and in the following image, dunst)
+
 http://i.imgur.com/g9mivkA.gif
 
 URxvt-notify
