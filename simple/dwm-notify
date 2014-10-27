@@ -1,0 +1,6 @@
+while true
+do
+xsetroot -name "$(date +%H:%M) | $(mpc | grep -)"
+trap "echo Exited!; exit;" SIGINT SIGTERM
+sleep 60s
+done
