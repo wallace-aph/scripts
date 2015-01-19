@@ -1,0 +1,9 @@
+#!/bin/bash
+# To avoid date taking up more time than neccesary, please rename the folders to 01, 02, etc
+
+# Change this variable to the folder location
+folder=$(whatever/wherever/whenever)
+
+month=$(date +%m)
+day=$(date +%d)
+feh -Z -g 328x525+950+125 $folder/$month/$day.jpg
