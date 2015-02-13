@@ -1,3 +1,4 @@
+#!/bin/bash
 tput civis -- invisible
 while true
 do
