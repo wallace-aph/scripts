@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Thank you john for the dot function
+
+targets=$(($1 - 1))
+
+dot () {
+        for ((i = 0; i < $1; i++)); do echo -ne "."; sleep 0.02; done; echo -e '[\033[00;30mCOMPLETE\033[00;0m]';sleep 0.6
+}
+
+randomDOT () {	
+number=0
+
+while [ "$number" -le 3 ]
+do
+  number=$RANDOM
+  let "number %= 15"
+done
+dot "$number"
+}
+
+randomIP () {	
+number=0
+
+while [ "$number" -le 0 ]
+do
+  number=$RANDOM
+  let "number %= 255"
+done
+echo -n "$number"
+}
+
+hack () {
+echo -ne "\033[00;31mInjecting:\033[00;0m "
+randomIP
+echo -n .
+randomIP
+echo -n .
+randomIP
+echo -n .
+randomIP
+randomDOT
+}
+
+reps=0
+while [ "$reps" -le $targets ]
+do
+hack
+reps=$((reps + 1)) # FUCK for loops
+done
+
+echo -ne "\033[00;32mNow hacking:\033[00;0m"
+ping -c 3 localhost | sed s/"PING"/""/g | sed s/"localhost"/"TARGETS"/g | sed s/"ping"/"hack"/g | sed s/"127.0.0.1"/"IP MAINFRAME"/g
+echo
+echo -e "\033[00;32mHACK COMPLETE\033[00;0m"
+echo -e "\033[00;34m1337\033[00;0m PORTS VULNERABLE ON $1 TARGETS"
