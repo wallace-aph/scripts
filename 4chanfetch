@@ -20,9 +20,11 @@ fi
 mkdir $dir
 cd $dir
 wget -nd -nc -e robots=off -rHD i.4cdn.org -A .jpg,.gif,.png $thread
+
 if [ $thumb == "y" ]
 then
 ls | grep s | xargs echo rm | sh
 echo Thumbnails sucessfully removed.
 fi
+
 echo "All actions completed sucessfully."
