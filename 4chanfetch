@@ -19,7 +19,7 @@ fi
 
 mkdir $dir
 cd $dir
-wget -nd -nc -e robots=off -rHD i.4cdn.org -A .jpg,.gif,.png $thread
+wget -nd -nc -e robots=off -rHD i.4cdn.org -A .jpg,.gif,.png,.webm $thread
 
 if [ $thumb == "y" ]
 then
