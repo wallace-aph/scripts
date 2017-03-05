@@ -1,6 +1,9 @@
 #!/bin/bash
 # Downloads all the images in a 4chan thread
+# Made by wallace.
 # I'm not responsible if you end up deleting your filesystem.
+# now u cant do that lol <3 butts
+# u can overwrite files tho so heads up
 
 dir="./"
 echo -n "Enter full thread URL: "
@@ -8,22 +11,14 @@ read thread
 echo "We are currently in $(pwd)."
 echo -n "Enter download directory, default is current: "
 read dir
-echo -n "Autoremove all downloaded thumbnails? WARNING: Make sure the download directory is empty! (y/n): "
-read thumb 
 
 if [ $dir == ""]
 then
 dir=$(pwd)
 fi
 
-mkdir $dir
-cd $dir
-wget -nd -nc -e robots=off -rHD is.4chan.org -A .jpg,.gif,.png,.webm $thread
-
-if [ $thumb == "y" ]
-then
-ls | grep s | xargs echo rm | sh
-echo Thumbnails sucessfully removed.
-fi
+mkdir "$dir"
+cd "$dir"
+wget -nd -nc -e robots=off --reject-regex [0-9]{13}[s]\. -rHD i.4cdn.org -A .jpg,.gif,.png,.webm $thread
 
 echo "All actions completed sucessfully."
