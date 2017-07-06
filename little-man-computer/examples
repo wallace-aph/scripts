@@ -1,0 +1,38 @@
+# Ask for two numbers and output the sum
+
+1 901
+2 390
+3 901
+4 190
+5 902
+
+# Example runtime output
+
+lilly ~ $ ./pro
+? 1 901
+? 2 390
+? 3 901
+? 4 190
+? 5 902
+? 101 0 ### Print out all memory addresses
+1:901
+2:390
+3:901
+4:190
+5:902
+? 100 1 ### Run the program with verbosing
+[1]: REQUESTING INPUT
+* 5
+[2]: STO 5 IN 90
+[3]: REQUESTING INPUT
+* 10
+[4]: ADD 5 TO 10
+[5]: OUTPUT
+15
+[6] BREAK
+? 100 0 ### Run the program without verbosing
+* 94
+* 81
+175
+[6] BREAK
+?^C
