@@ -9,7 +9,7 @@ Enter your data as:
 
 ? ADDRESS DATA
 
-Addressess can be between 1 and 99, data can be between 0 and 999.
+Addresses can be between 1 and 99, data can be between 0 and 999.
 Two special editor commands exist, enter them in the ? prompt as:
 
 ? COMMAND ARGUMENT
