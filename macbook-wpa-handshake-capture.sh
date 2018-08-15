@@ -29,8 +29,8 @@ echo ------------------------------------
 sudo tcpdump "ether proto 0x888e and ether host $BSSID" -I -U -vvv -i $CARD -w /tmp/handshake.cap
 echo ------------------------------------
 echo "Captures completed: merging pcaps..."
-mergecap -a -F pcap -w /tmp/full.cap /tmp/beacon.cap /tmp/handshake.cap
+mergecap -a -F pcap -w /tmp/$(date) /tmp/beacon.cap /tmp/handshake.cap
 sudo rm /tmp/beacon.cap
 sudo rm /tmp/handshake.cap
-echo "pcap saved as /tmp/full.cap."
+echo pcap saved as /tmp/$(date)
 echo "You may now use aircrack or your choice of bruteforcer against the pcap, provided handshakes were performed on the network while we were listening."
